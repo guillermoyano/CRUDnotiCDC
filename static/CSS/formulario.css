@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: white;
+}
+
+::placeholder {
+  color: black;
+}
+
+section {
+  max-width: 800px;
+  width: 90%;
+  margin: auto;
+  padding: 40px;
+}
+
+.contactForm {
+  background: white;
+  display: grid;
+  grid-template-columns: 1 1fr 1fr;
+  gap: 20px;
+}
+
+.accion {
+  display: block;
+  background-color: #111;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.accion:hover {
+  background-color: #fed306;
+  color: #111;
+}
+
+.contactForm__label {
+  display: block;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.contactForm__inputGroup {
+  position: relative;
+}
+
+.contactForm__input {
+  width: 100%;
+  background: rgba(163, 163, 163, 0.4);
+  border: 3px solid transparent;
+  border-radius: 3px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 40px 0 10px;
+  transition: 0.3s ease all;
+}
+
+.contactForm__input:focus {
+  border: 3px solid #0075ff;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.contactForm__message {
+  min-height: 150px;
+  width: 100%;
+  color: #070400;
+  background: rgba(163, 163, 163, 0.4);
+  border: 3px solid transparent;
+  border-radius: 3px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 40px 0 10px;
+  transition: 0.3s ease all;
+}
+
+.contactForm__input-error {
+  font-size: 12px;
+  margin-bottom: 0;
+  display: none;
+}
+
+.contactForm__input-error-activo {
+  display: block;
+}
+
+.contactForm__statusValidation {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  z-index: 100;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.contactForm__checkbox {
+  margin-right: 10px;
+}
+
+.contactForm__group-terminos,
+.contactForm__errorMessage,
+.contactForm__group-btn-enviar {
+  grid-column: span 1;
+}
+
+.contactForm__errorMessage {
+  height: 45px;
+  line-height: 45px;
+  background: #f66060;
+  padding: 0 15px;
+  border-radius: 3px;
+  display: none;
+}
+
+.contactForm__activeMessage {
+  display: block;
+}
+
+.contactForm__errorMessage p {
+  margin: 0;
+}
+
+.contactForm__group-btn-enviar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactForm__btn {
+  padding: 15px 25px;
+  margin: 20px;
+  font-size: 16px;
+  border: 2px solid #070400;
+  color: black;
+  cursor: pointer;
+  background: linear-gradient(to right, transparent 50%, yellow 50%);
+  background-size: 200%;
+  background-position: left;
+  transition: background-position 0.5s;
+  border-radius: 50px;
+}
+
+.contactForm__btn:hover {
+  background-position: right;
+  color: black;
+  font-weight: 700;
+}
+.contactForm__success-message {
+  font-size: 14px;
+  color: #119200;
+  display: none;
+}
+
+.contactForm__active-success-message {
+  display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.contactForm__successGroup .contactForm__statusValidation {
+  color: #1ed12d;
+  opacity: 1;
+}
+
+.contactForm__wrongGroup .contactForm__label {
+  color: #bb2929;
+}
+
+.contactForm__wrongGroup .contactForm__statusValidation {
+  color: #bb2929;
+  opacity: 1;
+}
+
+.contactForm__wrongGroup .contactForm__input {
+  border: 3px solid #bb2929;
+}
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+  .contactForm {
+    grid-template-columns: 1fr;
+  }
+
+  .contactForm__group-terminos,
+  .contactForm__errorMessage,
+  .contactForm__group-btn-enviar {
+    grid-column: 1;
+  }
+
+  .contactForm__btn {
+    width: 100%;
+  }
+}

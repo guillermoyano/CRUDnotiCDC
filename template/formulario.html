@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" contenido="IE=edge">
+	<meta name="viewport" contenido="width=device-width, initial-scale=1.0">
+	<title>Formulario</title>
+	<link rel="icon" type="image/ico" href="../static/img/icono.ico" />
+	<link rel="stylesheet" href="../static/css/navbar.css">
+	<link rel="stylesheet" href="../static/css/formulario.css">
+
+</head>
+
+<body>
+
+
+	<input type="checkbox" id="toggle" name="toggle">
+
+	<ul class="menu">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="formulario.html">Contacto</a></li>
+		<li><a href="nosotros.html">Nosotros</a></li>
+		<li><a href="objetivos.html">Objetivos</a></li>
+	</ul>
+
+	<div class="navbar" style="padding-left: 20px;">
+		<div class="logo">
+			<a href="index.html"><img src="/IMG/logo.png" alt="" style="width: 80px; "></a>
+		</div>
+		<label for="toggle">Menú</label>
+	</div>
+
+
+	<section class="contenido" style="background-color: white;" id="frmContacto">
+		<form action="" class="contactForm" id="contactForm">
+			<div class="contactForm__group" id="group__nombre">
+				<div class="contactForm__inputGroup">
+					<input type="text" class="contactForm__input" name="nombre" id="nombre" placeholder="Nombre">
+					<i class="contactForm__statusValidation fas fa-times-circle"></i>
+				</div>
+				<p class="contactForm__input-error">El nombre solo puede contener letras y espacios.</p>
+			</div>
+			<div class="contactForm__group" id="group__correo">
+				<div class="contactForm__inputGroup">
+					<input type="email" class="contactForm__input" name="correo" id="correo"
+						placeholder="tuCorreo@correo.com">
+					<i class="contactForm__statusValidation fas fa-times-circle"></i>
+				</div>
+				<p class="contactForm__input-error">El correo solo puede contener letras, numeros, puntos, guiones y
+					guion bajo.</p>
+			</div>
+			<div class="contactForm__group" id="group__telefono">
+				<div class="contactForm__inputGroup">
+					<input type="text" class="contactForm__input" name="telefono" id="telefono"
+						placeholder="Nro. Tel. 1123459876">
+					<i class="contactForm__statusValidation fas fa-times-circle"></i>
+				</div>
+				<p class="contactForm__input-error">El telefono solo puede contener numeros y el maximo son 14
+					dígitos.</p>
+			</div>
+			<div class="contactForm__group" id="group__suscripcion">
+				<label class="contactForm__label">
+					<input class="contactForm__checkbox" type="checkbox" name="suscripcion" id="suscripcion" checked>
+					Suscribite a nuestras noticias
+				</label>
+			</div>
+			<div class="contactForm__group" id="group__mensaje">
+				<div class="contactForm__inputGroup">
+					<textarea class="contactForm__message" name="mensaje" id="mensaje"
+						placeholder="Comentarios, sugerencias, quejas y/o reclamos"></textarea>
+					<i class="contactForm__statusValidation fas fa-times-circle"></i>
+				</div>
+			</div>
+			<div class="contactForm__errorMessage" id="contactForm__errorMessage">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario de
+					contacto correctamente. </p>
+			</div>
+			<div class="contactForm__group contactForm__group-btn-enviar">
+				<button type="submit" class="contactForm__btn">Enviar</button>
+				<p class="contactForm__success-message" id="contactForm__success-message">Formulario enviado
+					exitosamente. Copia enviada al mail de contacto cargado.</p>
+			</div>
+		</form>
+		<div>
+			<a class="accion" href="index.html">Regresar</a>
+		</div>
+	</section>
+
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script src="../static/js/contactForm.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

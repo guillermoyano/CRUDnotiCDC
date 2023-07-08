@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" contenido="IE=edge">
+	<meta name="viewport" contenido="width=device-width, initial-scale=1.0">
+	<title>API</title>
+	<link rel="icon" type="image/ico" href="../static/img/icono.ico" />
+	<link rel="stylesheet" href="../static/css/navbar.css">
+	<link rel="stylesheet" href="../static/css/formulario.css">
+	<link rel="stylesheet" href="../static/css/noticias.css">
+	<link rel="stylesheet" href="../static/css/loader.css">
+</head>
+
+<body onload="onLoad()">
+
+	<input type="checkbox" id="toggle" name="toggle">
+
+	<ul class="menu">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="formulario.html">Contacto</a></li>
+		<li><a href="nosotros.html">Nosotros</a></li>
+		<li><a href="objetivos.html">Objetivos</a></li>
+	</ul>
+
+	<div class="navbar" style="padding-left: 20px;">
+		<div class="logo">
+			<a href="index.html"><img src="/IMG/logo.png" alt="" style="width: 80px; "></a>
+		</div>
+		<label for="toggle">Menú</label>
+	</div>
+
+	<section class="contenido" style="background-color: white;" id="apiNews">
+
+		<div id="loader" class="loader">Buscando...</div>
+
+		<div class="container" id="container">
+			<ol class="news-list" id="news-list">
+			</ol>
+			<div>
+				<a class="accion" id="back__btn" href="index.html" style="display:none;">Regresar</a>
+			</div>
+		</div>
+	</section>
+	<script src="../static/js/apiNews_GetAll.js"></script>
+
+</body>
