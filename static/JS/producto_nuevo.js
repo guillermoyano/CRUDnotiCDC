@@ -1,7 +1,9 @@
 function guardar() {
-    let n = document.getElementById("nombre").value
-    let p = parseFloat(document.getElementById("precio").value)
-    let s = parseInt(document.getElementById("stock").value)
+    let t = document.getElementById("titular").value
+    let a = document.getElementById("autor").value
+    let f = document.getElementById("fecha").value
+    let co = document.getElementById("copete").value
+    let cu = document.getElementById("cuerpo").value
     let i = document.getElementById("imagen").value
 
     // {
@@ -12,10 +14,13 @@ function guardar() {
     //   }
 
     let producto = {
-        nombre: n,
-        precio: p,
-        stock: s,
+        titular: t,
+        autor: a,
+        fecha: f,
+        copete: co,
+        cuerpo: cu,
         imagen: i
+        
     }
     let url = "https://crud23010.pythonanywhere.com/productos"
     var options = {
