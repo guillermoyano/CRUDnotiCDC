@@ -22,6 +22,7 @@
         <li><a href="formulario.html">Contacto</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="crud.html">CRUD Noticias</a></li>
     </ul>
 
     <div class="navbar" style="padding-left: 20px;">
@@ -33,15 +34,42 @@
 
 
     <section class="contenido">
-        <div class="container">
-            <form class="formol">
-                <h2>Alta de producto</h2>
-                <input type="text" class="putin" name="titular" id="nombre" placeholder="Nombre del producto">
-                <input type="text" class="putin" name="autor" id="precio" placeholder="Precio del producto">
-                <input type="text" class="putin" name="fecha" id="stock" placeholder="Stock del producto">
-                <input type="text" class="putin" name="copete" id="imagen" placeholder="URL de la imagen">
-                <button class="botonito" type="button" onclick="guardar()">Grabar</button>
-            </form>
+
+        <div class="carditos">
+            <div class="card-header">
+                <div class="text-header">Crear Noticia</div>
+            </div>
+            <div class="card-body">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="username">Titular:</label>
+                        <input required="" class="form-control" name="titular" id="titular" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Autor:</label>
+                        <input required="" class="form-control" name="autor" id="autor" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Fecha:</label>
+                        <input required="" class="form-control" name="fecha" id="fecha" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Copete:</label>
+                        <textarea required class="form-control" id="copete" name="copete" rows="4" cols="50"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Cuerpo:</label>
+                        <textarea required class="form-control" id="copete" name="copete" rows="15" cols="50"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">URL de la imagen:</label>
+                        <input required="" class="form-control" name="imagen" id="imagen" type="text">
+                    </div>
+                    
+                    <!-- <input type="submit" class="btn" value="submit"> -->
+                    <button class="btn" type="button" onclick="guardar()">Grabar</button>
+                </form>
+            </div>
         </div>
     </section>
 

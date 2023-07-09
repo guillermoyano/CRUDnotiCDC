@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" contenido="IE=edge">
+    <meta name="viewport" contenido="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <link rel="icon" type="image/ico" href="../static/img/icono.ico" />
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/noticias-cards.css">
+    <link rel="stylesheet" href="../static/css/crud.css">
+
+</head>
+
+<body>
+    <input type="checkbox" id="toggle" name="toggle">
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="crud.html">CRUD Noticias</a></li>
+    </ul>
+
+    <div class="navbar" style="padding-left: 20px;">
+        <div class="logo">
+            <a href="index.html"><img src="../static/img/logo.png" alt="" style="width: 80px; "></a>
+        </div>
+        <label for="toggle">Menú</label>
+    </div>
+
+    <div class="contuchi">
+        <button class="botonn">
+            <a href="noticias_nuevo.html">Crear noticia</a>
+          </button>
+        <table class="zigzag">
+            <thead>
+                <tr>
+                    <th class="header">Titular</th>
+                    <th class="header">Autor</th>
+                    <th class="header">Fecha</th>
+                    <th class="header">Acciones</th>
+                    <th class="header">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{noticia.titular}}</td>
+                    <td>{{noticia.autor}}</td>
+                    <td>{{noticia.fecha}}</td>
+                    <td>
+                        <button class="botonm">
+                            <p><a href="noticias_editar.html">Modificar</a></p>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="botone">
+                            <p><a href="">Eliminar</a></p>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>

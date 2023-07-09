@@ -1,104 +1,97 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-    <title>Title</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../static/css/navbar_new.css">
-    <link rel="stylesheet" href="../static/css/form.css">
-    <link rel="stylesheet" href="../static/css/lista.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" contenido="IE=edge">
+    <meta name="viewport" contenido="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <link rel="icon" type="image/ico" href="../static/img/icono.ico" />
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/noticias-cards.css">
+    <link rel="stylesheet" href="../static/css/listaCrud.css">
 
 </head>
 
 <body>
-    <header id="header">
-        
-    </header>
-    
-
-    <main>
-        <div id="app" class="container">
-            <section v-if="error">Lo sentimos se produjo un error</section>
-            <section v-else>
-                <section v-if="cargando">
-
-                </section>
-                <section v-else>
-                    <button class="hache2">
-                        <span class="spunpun">Listado de productos</span>
-                    </button>
-                    <br>
-
-                    <button class="nuevo">
-                        <a href="noticias_nuevo.html">Producto Nuevo</a>
-                    </button>
-
-                    <div class="table-wrapper">
-                        <table class="fl-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Titular</th>
-                                    <th>Copete</th>
-                                    <th>Cuerpo</th>
-                                    <th>Imagen</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="noticia in noticias" class="">
-                                    <td scope="row">{{noticia.id}}</td>
-                                    <td>{{noticia.titular}}</td>
-                                    <td>{{noticia.copete}}</td>
-                                    <td>{{noticia.cuerpo}}</td>
-                                    <td><img width="60" :src="noticia.imagen" :alt="Imagen"></td>
-                                    <td>
-
-                                        <button class="modificar"> <a
-                                                :href="'noticia_editar.html?id='+ noticia.id+'&titular=' +noticia.titutar+ '&copete='+noticia.copete+'&cuerpo='+noticia.cuerpo +  '&imagen='+noticia.imagen">Modificar</a>
-                                        </button>
-
-                                        <!-- <button class="eliminar" v-on:click="eliminar(producto.id)"> Eliminar
-                                        </button> -->
 
 
-                                        <button class="eliminar" onclick="openModal()">Eliminar</button>
+    <input type="checkbox" id="toggle" name="toggle">
 
-                                        <!-- Modal -->
-                                        <div id="myModal" class="modal">
-                                            <div class="modal-content">
-                                                <h2>¿Seguro que deseas eliminar la noticia?</h2>
-                                                <div class="modal-buttons">
-                                                    <button class="btn-confirmar"
-                                                    v-on:click="eliminar(noticia.id)">Eliminar</button>
-                                                    <button class="btn-cancelar"
-                                                        onclick="closeModal()">Cancelar</button>
-                                                </div>
-                                            </div>
-                                        </div>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="crud.html">CRUD Noticias</a></li>
+    </ul>
 
-                                    </td>
-                                </tr>
-                            <tbody>
-                        </table>
-                    </div>
-                </section>
-            </section>
+    <div class="navbar" style="padding-left: 20px;">
+        <div class="logo">
+            <a href="index.html"><img src="../static/img/logo.png" alt="" style="width: 80px; "></a>
         </div>
-    </main>
+        <label for="toggle">Menú</label>
+    </div>
 
-    <footer>
-        <div class="footer-container">
-            <p>Guillermo R. Moyano. Full Stack Python. Comisión 23010</p>
+
+    <section class="contenido">
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Titular</th>
+                        <th>Copete</th>
+                        <th>Cuerpo</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="noticia in noticias" class="">
+                        <td scope="row">{{noticia.id}}</td>
+                        <td>{{noticia.titular}}</td>
+                        <td>{{noticia.copete}}</td>
+                        <td>{{noticia.cuerpo}}</td>
+                        <td><img width="60" :src="noticia.imagen" :alt="Imagen"></td>
+                        <td>
+
+                            <button class="modificar"> <a
+                                    :href="'noticia_editar.html?id='+ noticia.id+'&titular=' +noticia.titutar+ '&copete='+noticia.copete+'&cuerpo='+noticia.cuerpo +  '&imagen='+noticia.imagen">Modificar</a>
+                            </button>
+
+                            <!-- <button class="eliminar" v-on:click="eliminar(producto.id)"> Eliminar
+                            </button> -->
+
+
+                            <button class="eliminar" onclick="openModal()">Eliminar</button>
+
+                            <!-- Modal -->
+                            <div id="myModal" class="modal">
+                                <div class="modal-content">
+                                    <h2>¿Seguro que deseas eliminar la noticia?</h2>
+                                    <div class="modal-buttons">
+                                        <button class="btn-confirmar"
+                                            v-on:click="eliminar(noticia.id)">Eliminar</button>
+                                        <button class="btn-cancelar" onclick="closeModal()">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                <tbody>
+            </table>
         </div>
-    </footer>
+    </section>
+
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../static/js/noticiasGetAll.js"></script>
     <script src="../static/js/modal.js"></script>
     <script src="../static/js/main.js"></script>
+
 </body>
 
 </html>

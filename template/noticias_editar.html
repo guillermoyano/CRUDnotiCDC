@@ -1,50 +1,73 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-    <!doctype html>
-    <html lang="en">
-    
-    <head>
-        <title>Title</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="../static/style/navbar.css">
-        <link rel="stylesheet" href="../static/style/form.css">
-    
-    </head>
-    
-    <body>
-        <header id="header">
-        
-        </header>
-        <script src="../static/js/main.js"></script>
-    
-        <main>
-    
-            <div class="container">
-                <form class="formol">
-                    <h2>Editar producto</h2>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" contenido="IE=edge">
+    <meta name="viewport" contenido="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <link rel="icon" type="image/ico" href="../static/img/icono.ico" />
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/noticias-cards.css">
+
+</head>
+
+<body>
+    <input type="checkbox" id="toggle" name="toggle">
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="crud.html">CRUD Noticias</a></li>
+    </ul>
+
+    <div class="navbar" style="padding-left: 20px;">
+        <div class="logo">
+            <a href="index.html"><img src="../static/img/logo.png" alt="" style="width: 80px; "></a>
+        </div>
+        <label for="toggle">Menú</label>
+    </div>
 
 
-                    <input hidden type="text" class="putin" name="id" id="id" placeholder="Nombre del producto">
-                    <input type="text" class="putin" name="nombre" id="nombre" placeholder="Nombre del producto">
-                    <input type="text" class="putin" name="precio" id="precio" placeholder="Precio del producto">
-                    <input type="text" class="putin" name="stock" id="stock" placeholder="Stock del producto">
-                    <input type="text" class="putin" name="imagen" id="imagen" placeholder="URL de la imagen">
-                    <button class="botonito" type="button" onclick="modificar()">Modificar</button>
+    <section class="contenido">
+        <div class="carditos">
+            <div class="card-header">
+                <div class="text-header">Modificar Noticia</div>
+            </div>
+            <div class="card-body">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="username">Titular:</label>
+                        <input required="" class="form-control" name="titular" id="titular" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Autor:</label>
+                        <input required="" class="form-control" name="autor" id="autor" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Fecha:</label>
+                        <input required="" class="form-control" name="fecha" id="fecha" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Copete:</label>
+                        <textarea required class="form-control" id="copete" name="copete" rows="4" cols="50"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Cuerpo:</label>
+                        <textarea required class="form-control" id="copete" name="copete" rows="15" cols="50"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">URL de la imagen:</label>
+                        <input required="" class="form-control" name="imagen" id="imagen" type="text">
+                    </div>
+                    
+                    <button class="btn" type="button" onclick="modificar()">Modificar</button>
                 </form>
             </div>
-        </main>
-    
-        <footer>
-            <div class="footer-container">
-                <p>Guillermo R. Moyano. Full Stack Python. Comisión 23010</p>
-            </div>
-        </footer>
-    
-        <script src="../static/js/producto_editar.js"></script>
-    
-    </body>
-    
-    </html>
+        </div>
+    </section>
+
+</body>
+
+</html>
