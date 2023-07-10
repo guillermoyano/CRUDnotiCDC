@@ -34,44 +34,48 @@
 
 
     <section class="contenido">
-
         <div class="carditos">
             <div class="card-header">
-                <div class="text-header">Crear Noticia</div>
+                <div class="text-header">Nuevo</div>
             </div>
             <div class="card-body">
-                <form action="#">
+                <form>
                     <div class="form-group">
-                        <label for="username">Titular:</label>
+                        <input hidden type="number" class="form-control" name="id" id="id" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="titular">Titular</label>
                         <input required="" class="form-control" name="titular" id="titular" type="text">
                     </div>
                     <div class="form-group">
-                        <label for="email">Autor:</label>
+                        <label for="autor">Autor</label>
                         <input required="" class="form-control" name="autor" id="autor" type="text">
                     </div>
                     <div class="form-group">
-                        <label for="password">Fecha:</label>
-                        <input required="" class="form-control" name="fecha" id="fecha" type="text">
+                        <label for="fecha">Fecha</label>
+                        <input required="" class="form-control" name="fecha" id="fecha" type="date">
                     </div>
                     <div class="form-group">
-                        <label for="password">Copete:</label>
+                        <label for="copete">Copete</label>
                         <textarea required class="form-control" id="copete" name="copete" rows="4" cols="50"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="password">Cuerpo:</label>
-                        <textarea required class="form-control" id="copete" name="copete" rows="15" cols="50"></textarea>
+                        <label for="cuerpo">Cuerpo</label>
+                        <textarea required class="form-control" id="cuerpo" name="cuerpo" rows="15"
+                            cols="50"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="password">URL de la imagen:</label>
-                        <input required="" class="form-control" name="imagen" id="imagen" type="text">
+                        <label for="imagen">URL imagen</label>
+                        <input required="" class="form-control" name="imagen" id="imagen" type="url">
                     </div>
-                    
-                    <!-- <input type="submit" class="btn" value="submit"> -->
-                    <button class="btn" type="button" onclick="guardar()">Grabar</button>
+
+                    <button class="btn" type="button" onclick="guardar()">Crear</button>
+                    <a href="crud.html" class="btn" role="button">Cancelar</a>
                 </form>
             </div>
         </div>
     </section>
+    <script src="../static/js/noticia_nuevo.js"></script>
 
 </body>
 

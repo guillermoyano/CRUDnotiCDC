@@ -3,7 +3,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        url:"http://127.0.0.1:5000/noticias",
+        url:"https://zorrobsas.pythonanywhere.com/noticias",
         noticias:[],
         error:false,
         cargando:true
@@ -31,7 +31,7 @@ const { createApp } = Vue
         },
         // producto; es el id que necesita para buscar en la DB y eliminarlo
         eliminar(noticia) {
-            const url = 'http://localhost:5000/noticias/' + noticia;
+            const url = 'https://zorrobsas.pythonanywhere.com/noticias/' + noticia;
             var options = {
                 method: 'DELETE',
             }

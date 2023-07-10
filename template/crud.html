@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" contenido="IE=edge">
     <meta name="viewport" contenido="width=device-width, initial-scale=1.0">
     <title>Noticias</title>
+    <script>
+        function reloadPage() {
+            location.reload();
+        }
+
+        setTimeout(reloadPage, 30000); 
+    </script>
     <link rel="icon" type="image/ico" href="../static/img/icono.ico" />
     <link rel="stylesheet" href="../static/css/navbar.css">
     <link rel="stylesheet" href="../static/css/noticias-cards.css">
@@ -30,41 +37,58 @@
         <label for="toggle">Menú</label>
     </div>
 
-    <div class="contuchi">
-        <button class="botonn">
-            <a href="noticias_nuevo.html">Crear noticia</a>
-          </button>
-        <table class="zigzag">
-            <thead>
-                <tr>
-                    <th class="header">Titular</th>
-                    <th class="header">Autor</th>
-                    <th class="header">Fecha</th>
-                    <th class="header">Acciones</th>
-                    <th class="header">Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{noticia.titular}}</td>
-                    <td>{{noticia.autor}}</td>
-                    <td>{{noticia.fecha}}</td>
-                    <td>
-                        <button class="botonm">
-                            <p><a href="noticias_editar.html">Modificar</a></p>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="botone">
-                            <p><a href="">Eliminar</a></p>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+    <div class="navbar" style="padding-left: 20px;">
+        <div class="logo">
+            <a href="index.html"><img src="../static/img/logo.png" alt="" style="width: 80px; "></a>
+        </div>
+        <label for="toggle">Menú</label>
     </div>
 
 
+    <div id="app">
+        <div class="contuchi">
+            <button class="botonn"><a href="noticias_nuevo.html">Crear noticia</a></button>
+            <div class="tabla-container">
+                <table class="zigzag">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col" style="width: 400px;">Titular</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col" style="width: 100px;">Fecha</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Modificar</th>
+                            <th scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="noticia in noticias" class="">
+                            <td scope="row">{{noticia.id}}</td>
+                            <td style="min-width: 400px;">{{noticia.titular}}</td>
+                            <td>{{noticia.autor}}</td>
+                            <td style="min-width: 100px;">{{noticia.fecha}}</td>
+                            <td>
+                                <img width="60" :src="noticia.imagen" :alt="Imagen">
+                            </td>
+                            <td>
+                                <button class="botonm">
+                                    <a class="botonm"
+                                        :href="'noticias_editar.html?id='+ noticia.id+'&titular=' +noticia.titular+'&autor=' +noticia.autor+'&fecha=' +noticia.fecha+ '&copete='+noticia.copete+'&cuerpo='+noticia.cuerpo +  '&imagen='+noticia.imagen">Modificar</a>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="botone" v-on:click="eliminar(noticia.id)">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../static/js/noticiasGetAll.js"></script>
+    <script src="../static/JS/modal.js"></script>
 </body>
 
 </html>

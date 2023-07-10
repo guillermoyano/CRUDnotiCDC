@@ -1,11 +1,35 @@
-.contuchi {
-  max-width: 800px;
-  margin: 200px auto 0;
-  padding: 20px;
-  background-color: #ffffff;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-table {
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.contuchi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.botonn {
+  margin-bottom: 20px;
+}
+
+.tabla-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.table {
     font-family: sans-serif;
   }
   table th, table td {
@@ -32,18 +56,6 @@ table {
   .zigzag thead tr, .zigzag tbody tr:nth-child(even) {
     transform: rotate(-0deg);
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -172,27 +184,7 @@ table {
     color: #ffffff;
    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    .botonn {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);

@@ -9,7 +9,7 @@ const {
 //a href="#" class="leftlinks" onclick="updateParent(control)" id="2" value="2">CLICK HERE</a>
 const idNoticia = search.replace('?', '');
 async function onLoad() {
-    const url = 'http://127.0.0.1:5000/noticias/'+idNoticia  ;
+    const url = 'https://zorrobsas.pythonanywhere.com/noticias/'+idNoticia  ;
     const options = {
         method: 'GET',
     };

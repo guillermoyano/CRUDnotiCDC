@@ -1,7 +1,8 @@
 const newsList = document.getElementById('news-list');
 
 async function onLoad() {
-    const url = 'http://127.0.0.1:5000/noticias';
+    // const url = 'http://127.0.0.1:5000/noticias';
+    const url = 'https://zorrobsas.pythonanywhere.com/noticias';
     const options = {
         method: 'GET',
     };
@@ -23,7 +24,7 @@ function setNewsData(data) {
         let li = document.createElement('li');
         let a = document.createElement('a');
         a.setAttribute('target', '_blank');
-        a.setAttribute('href', 'noticiaGetOne.html?' + article.id);
+        a.setAttribute('href', 'noticia_GetOne.html?' + article.id);
        // a.setAttribute('onclick','apiNews_GetOne('+article.id+')');
        // a.setAttribute('value', article.id);
         a.textContent = article.titular;
