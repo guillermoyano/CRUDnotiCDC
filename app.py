@@ -20,15 +20,9 @@ app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:@127.0.0.1:3307/proy
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 
 
-
-# Se crean 2 objetos
-# Permite manipular la BD de la app
 db = SQLAlchemy(app)
-# Permite acceder a la aplicación y va a dar herramientas para converitr datos completos (json) a objetos
 ma = Marshmallow(app)
 
-# Se define la clase Noticias (Es una estructura de la tabla de una BD)
-# Partes de una noticia. Estructura, ID titular copete cuerpo imagen
 class Noticia(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     titular = db.Column(db.String(150))
