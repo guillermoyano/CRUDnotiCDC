@@ -156,7 +156,7 @@ def update_noticia(id):
     noticia.imagen=imagen
     #  Guardar los cambios
     db.session.commit()
-    # Para ello, usar el objeto producto_schema para que convierta con                     # jsonify el dato recién eliminado que son objetos a JSON  
+    # Para ello, usar el objeto producto_schema para que convierta con                     
     return noticia_schema.jsonify(noticia)
 
 # Mostrar la foto
